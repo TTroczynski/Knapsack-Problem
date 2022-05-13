@@ -3,6 +3,24 @@
 #include <sstream>
 #include <string>
 
+unsigned Solution::kMaxWeight;
+
+Solution::Solution(unsigned maxWeight) {
+
+	std::vector<Item> temp{
+{randomInt(), randomInt(), randomBool()},
+{ randomInt(), randomInt(), randomBool() },
+{ randomInt(), randomInt(), randomBool() },
+{ randomInt(), randomInt(), randomBool() },
+{ randomInt(), randomInt(), randomBool() },
+{ randomInt(), randomInt(), randomBool() },
+{ randomInt(), randomInt(), randomBool() },
+	};
+
+	mItems = temp;
+	kMaxWeight = maxWeight;
+}
+
 Solution::Solution(std::vector<Item> items): mItems{items}
 {
 }
@@ -25,7 +43,7 @@ std::string Solution::toString() const
 	for (Item const& i : mItems) {
 		stream << i.toString() << " ";
 	}
-	stream << std::endl << " Total weight + Value = " << getTotalWeight() << ' ' << value();
+	stream << std::endl << " Total weight + Value = " << getTotalWeight() << " + " << value();
 
 	return stream.str();
 }
@@ -48,6 +66,7 @@ double Solution::value() const
 	if (getTotalWeight() > kMaxWeight) {
 		return -10;
 	}
+	return valueSum;
 }
 
 //Randomly adds or removes an item to the knapsack

@@ -8,12 +8,13 @@ class Solution
 {
 private:
 	std::vector<Item> mItems;
-	static const unsigned kMaxWeight;
+	static unsigned kMaxWeight;
 
 private:
 	double getTotalWeight() const;
 
 public:
+	Solution(unsigned maxWeight);
 	Solution(std::vector<Item> items);
 	std::string toString() const;
 	double value() const;

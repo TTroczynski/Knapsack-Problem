@@ -9,3 +9,9 @@ bool randomBool()
 	}
 	return false;
 }
+
+double randomInt() {
+	int randomValue = (int)rand() % 50;
+
+	return randomValue;
+}
