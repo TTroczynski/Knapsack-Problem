@@ -81,16 +81,15 @@ Solution Solution::randomWalk() const
 	Solution newSolution(itemsCopy);
 
 	//Repair invalid solution
-	/*
-	while (newSolution.value() < 0 && newSolution.value() > 0) {
+	while (newSolution.value() < 0) {
 		for (Item& i : itemsCopy) {
 			if (i.isPresent()) {
 				i.setPresent(false);	//scan through the items in the set and the first one found present, gets removed from the set. present = false.
 				break;
 			}
 		}
+		newSolution.mItems = itemsCopy;	//Needto update the solutions set so that the repaired set is taken as the solution.
 	}
-	*/
 	
 	return newSolution;
 
