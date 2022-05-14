@@ -79,6 +79,19 @@ Solution Solution::randomWalk() const
 	itemsCopy[index].setPresent(!itemsCopy[index].isPresent());
 
 	Solution newSolution(itemsCopy);
+
+	//Repair invalid solution
+	/*
+	while (newSolution.value() < 0 && newSolution.value() > 0) {
+		for (Item& i : itemsCopy) {
+			if (i.isPresent()) {
+				i.setPresent(false);	//scan through the items in the set and the first one found present, gets removed from the set. present = false.
+				break;
+			}
+		}
+	}
+	*/
+	
 	return newSolution;
 
 }
