@@ -64,7 +64,7 @@ double Solution::value() const
 
 	//Penalty Method
 	if (getTotalWeight() > kMaxWeight) {
-		return -10;
+		return -10; //return valueSum - 10 if you want to just penalize the current solution set, but this introduces the possibility of selecting an invalid solution as a valid one.
 	}
 	return valueSum;
 }

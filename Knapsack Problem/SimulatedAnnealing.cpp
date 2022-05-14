@@ -36,7 +36,7 @@ Solution SimulatedAnnealing::run(unsigned maxWeight)
 				std::cout << "Found a better solution" << std::endl;
 				currentSolution = candidate;
 			}
-			else {
+			else {//else if(candidate.value() > 0){				If you want to implement a discard method. Ignores solutions found if they are returned as invalid(-10) due to weight exceeding max
 				double frac = (-1 * candidate.value()) + currentSolution.value();
 				double probability = 1 / exp(frac / currentTemperature);
 
