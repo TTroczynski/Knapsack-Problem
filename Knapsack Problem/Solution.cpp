@@ -43,7 +43,7 @@ std::string Solution::toString() const
 	for (Item const& i : mItems) {
 		stream << i.toString() << " ";
 	}
-	stream << std::endl << " Total weight + Value = " << getTotalWeight() << " + " << value();
+	stream << std::endl << " Total weight & Value = " << getTotalWeight() << " & " << value() << std::endl;
 
 	return stream.str();
 }

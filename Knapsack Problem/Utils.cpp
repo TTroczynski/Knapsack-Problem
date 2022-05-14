@@ -11,7 +11,7 @@ bool randomBool()
 }
 
 double randomInt() {
-	int randomValue = (int)rand() % 50;
+	int randomValue = (int)rand() % 100;
 
 	return randomValue;
 }
